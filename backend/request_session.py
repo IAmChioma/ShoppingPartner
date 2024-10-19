@@ -36,3 +36,14 @@ def walmart_request(search_phrase: str):
         return None
     return soup_parser.walmart_json(response)
 
+
+def target_request(search_phrase: str):
+    url = "https://www.target.com/s?searchTerm=" + search_phrase.replace(" ", "+")
+    fake_headers["Host"] = "www.target.com"
+    response = request_session(url, fake_headers)
+    # with open("dump.html", "w", encoding='utf-8') as file:
+    #     file.write(str(response))
+    if (response is None):
+        return None
+    return soup_parser.target_json(response)
+
