@@ -11,6 +11,7 @@
     }
 
     // TODO: Fetch data
+    fetch ("http://127.0.0.1:5000/search/"+searchParam).then(response => console.log(response))
 
 
     // TODO: Display fetched data on html
