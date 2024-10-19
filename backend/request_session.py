@@ -8,3 +8,9 @@ def request_session(url: str) -> BeautifulSoup:
         print("ERROR: returned status code", r.status_code)
         return None
     return BeautifulSoup(r.content, 'html.parser')
+
+
+def walmart_request(search_phrase: str) -> BeautifulSoup:
+    url = "https://www.walmart.com/search?q=" + search_phrase.replace(" ", "+")
+    return request_session(url)
+
