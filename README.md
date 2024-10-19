@@ -12,5 +12,24 @@ While shopping, especially as a student, it will be great to see similar product
 ## More information
 Product details can include name, source, price and image if possible
 
+## Setup
+- Install and download python (if you don't have it yet): https://www.geeksforgeeks.org/download-and-install-python-3-latest-version/
+
+- Download Visual studio code (or any editor of choice) 
+
+- Clone repository : https://github.com/IAmChioma/ShoppingPartner
+
+- Go to the cloned repository folder (ShoppingPartner)
+
+- install virtual environment : pip install virtualenv
+
+- Create virtual environment : python -m venv venv
+
+- Activate virtual environment : venv\Scripts\activate.bat
+
+- Install requirements : pip install -r requirements.txt
+
+
+
 
 
