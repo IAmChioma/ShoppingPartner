@@ -52,3 +52,29 @@ def first_child(tag):
         return child
     return None
 
+
+def target_json(soup: BeautifulSoup):
+    result = []
+    cards = soup.find_all(attrs={"data-module-type": "ProductListCard"})
+    if (cards.__len__() == 0):
+        print("Didn't find product cards")
+        return json.dumps(result)
+    for card in cards:
+        intermediate = first_child(first_child(first_child(card)))
+        if (intermediate is None):
+            break
+        img_url = intermediate.find('a')["href"]
+        #print(img_url)
+        details = intermediate.find(attrs={"data-test": "product-details"})
+        temp = first_child(first_child(first_child(first_child(first_child(details)))))
+        if (temp is None):
+            break
+        title = temp.contents[0]
+        #print(title)
+        link = temp["href"]
+        #print(link)
+        price = "not implemented"
+        data = {"link": link, "img_url": img_url, "price": price, "title": title}
+        result.append(data)
+    return json.dumps(result)
+
