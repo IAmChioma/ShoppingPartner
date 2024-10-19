@@ -29,7 +29,13 @@ Product details can include name, source, price and image if possible
 
 - Install requirements : pip install -r requirements.txt
 
+## Run application: Backend
+- Go to folder backend : cd backend
+- Run : flask --app backend run
 
+## Run application: Frontend
+- Install live server
+- Go live
 
 
 
